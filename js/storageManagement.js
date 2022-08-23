@@ -3,7 +3,11 @@ const TASKS_DATA_KEY = "tasks"
 
 export function get() {
     const data = localStorage.getItem(TASKS_DATA_KEY) 
-    return JSON.parse(data)
+    if (data) {
+        return JSON.parse(data)
+    } else {
+        return []
+    }
 }
 
 
